@@ -1,0 +1,89 @@
+{
+  "expo": {
+    "name": "Private",
+    "slug": "private-chat",
+    "scheme": "private",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0f"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.privatechat.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Private uses your camera for video calls and profile photos.",
+        "NSMicrophoneUsageDescription": "Private uses your microphone for voice and video calls.",
+        "NSPhotoLibraryUsageDescription": "Private accesses your photos to share in chats."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0a0a0f"
+      },
+      "package": "com.privatechat.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.USE_EXACT_ALARM"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Private to access your camera for video calls and profile photos.",
+          "microphonePermission": "Allow Private to access your microphone for voice and video calls.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#10b981",
+          "androidMode": "default",
+          "androidCollapsedTitle": "New messages"
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow Private to access your Face ID."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Private to access your photos to share in chats.",
+          "cameraPermission": "Allow Private to access your camera."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0cf3de97-c61b-4901-8dfc-c21c6f6904c1"
+      }
+    }
+  }
+}
