@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 13.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "private-app.replit.app"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease",
+        "image": "latest"
+      },
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "private-app.replit.app"
+      }
+    },
+    "preview-arm64": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease -Pandroid.injected.abis=arm64-v8a",
+        "image": "latest"
+      },
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "private-app.replit.app"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "private-app.replit.app"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
