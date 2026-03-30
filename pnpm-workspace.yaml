@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+  - 'artifacts/api-server'
+  - 'artifacts/web-app'
+
+catalog:
+  drizzle-orm: ^0.40.0
+  '@types/node': ^22.0.0
